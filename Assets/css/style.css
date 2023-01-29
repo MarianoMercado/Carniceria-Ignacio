@@ -5,6 +5,7 @@
   --yeelow: #ffd803;
   --cid: #bae8e8;
   --gray: #f9f8fc;
+  --sky-blue: #3bd9d9;
 }
 
 * {
@@ -25,6 +26,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 1;
+  box-shadow: var(--gray) 0 0 15px;
 }
 header img {
   height: 100%;
@@ -135,7 +137,8 @@ main {
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  max-width: 90%;
+  max-width: 1200px;
+  width: 100%;
   gap: 20px;
 }
 
@@ -143,9 +146,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 400;
-  gap: 50px;
+  gap: 20px;
+  max-width: 50%;
+  text-align: center;
 }
 .about-info h2 {
   text-shadow: 1px, 2px, #a29e9e;
@@ -164,26 +169,114 @@ main {
 
 #cards {
   display: flex;
-
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 20px 20px;
-  max-width: 90%;
-  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  gap: 30px;
 }
 
-.cards-meat,
-.cards-vegetable,
-.cards-Commodity {
+#cards h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 35px;
+  letter-spacing: 10px;
+  border: 2px solid var(--gray);
+  border-radius: 10px;
+  transform: translate(0);
+  padding: 16px 36px;
+  background: transparent;
+  overflow: hidden;
+  text-align: center;
+}
+
+#cards h2::before {
+  content: "";
+  position: absolute;
+  background: var(--sky-blue);
+  transform: rotate(-16deg);
+  filter: blur(6px);
+  width: 8px;
+  top: 0;
+  bottom: 0;
+  left: -30px;
+}
+
+#cards h2:hover::before {
+  left: calc(100% + 32px);
+  transition: 0.75s;
+}
+
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px 20px;
+}
+.card__products {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
+  padding: 10px 20px;
+  width: 300px;
+  border-radius: 15px;
+  background: var(--bg-);
+  /* background: linear-gradient(to bottom, var(--gray), #121e3c); */
+  box-shadow: var(--gray) 0 0 15px;
+}
+.card__products img {
+  height: 200px;
+  width: 200px;
+}
+.card__products-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  width: 100%;
 }
 
-.cards-meat-img,
-.cards-vegetable-img,
-.cards-Commodity-img {
-  width: 100%;
+.card__products-btn {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: var(--gray);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 900;
+  width: 50%;
+  margin-bottom: 5px;
+}
+
+.card__products-btn a {
+  list-style: none;
+  text-decoration: none;
+  color: var(--bg-black);
+  font-size: 16px;
+}
+.card__products-btn i {
+  color: var(--bg-black);
+  font-size: 16px;
+}
+
+.card__products-btn:hover {
+  background: var(--sky-blue);
+  box-shadow: var(--sky-blue) 0 0 15px;
 }
 
 /* contact */
@@ -194,9 +287,79 @@ main {
   justify-content: center;
   padding: 20px 20px;
   max-width: 90%;
+  width: 100%;
+  font-size: 25px;
+}
+
+.contact-gps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50%;
+  padding: 50px;
+  max-width: 1000px;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  text-align: center;
+}
+
+.contact-info h2 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.contact-wsp,
+.contact-adress,
+.contact-horus,
+.horus-day,
+.contact-location {
+  display: flex;
+
+  text-align: center;
+  width: 100%;
   gap: 20px;
 }
-.contact-gps {
-  height: 50%;
-  padding: 20px 20px;
+.horus-day-week,
+.horus-day-weekend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.horus-day {
+  display: flex;
+}
+/* footer */
+
+footer {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  height: 65px;
+  padding: 20px 40px;
+  width: 100%;
+  box-shadow: var(--gray) 0 0 5px;
+  color: var(--gray);
+}
+
+footer img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }

@@ -24,14 +24,131 @@
         alt="Carnes Ignacio - carniceria"
       />
       <nav class="navbar">
+           <!-- menu hamburgresa  -->
+            <label for="toggle-menu"> <i class="fas fa-bars"></i></label>
+            <input type="checkbox" id="toggle-menu">
+<!-- navbarlist  -->
         <ul class="navbarlist">
           <li><a href="#hero">Inicio</a></li>
           <li><a href="#about">Nosotros </a></li>
           <li><a href="#cards">Productos </a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
+        <!-- carrito -->
+        <label for="cart">
+          <i class="fa-solid fa-cart-shopping cart-icon"></i>
+        </label>
+        <input type="checkbox" id="cart">
+        <!-- menu del carrito -->
+        <div class="cart-shopping">
 
-        <i class="fa-solid fa-cart-shopping cart-icon"></i>
+          
+          <div class="cart-header">
+            <h2>Carrito de compras</h2>
+            <div class="cart-header-top">
+            <h3>Tus Productos</h3>
+            <h3>Subtotal $</h3>
+            </div>            
+          </div>
+
+          <div class="cart-body">
+            <div class="cart__body-detail">
+              <img
+              src="./Assets/imagenes/cortes-carne-churrasco.jpg"
+              alt="Asado - Carniceria - San Juan"
+              />
+              <h3>Asado :</h3>
+              <p>$1000</p>
+            </div>
+            <div class="cart__body-top">            
+
+              <div class="cart__body-control">                
+                <span class="body-control down">-</span>
+                <span class="body-control">1</span>
+                <span class="body-control up">+</span>  
+              </div>
+
+              <div class="cart__body-subtotal">
+                <span>SubTotal :</span>
+                <span>$1000</span>
+              </div>
+              </div>
+
+          </div>
+
+
+          <div class="cart-body">
+            <div class="cart__body-detail">
+              <img
+              src="./Assets/imagenes/cortes-carne-churrasco.jpg"
+              alt="Asado - Carniceria - San Juan"
+              />
+              <h3>Asado :</h3>
+              <p>$$$$</p>
+            </div>
+            
+
+              <div class="cart__body-control">                
+                <span class="body-control down">-</span>
+                <span class="body-control">1</span>
+                <span class="body-control up">+</span>  
+              </div>
+
+          </div>
+          <div class="cart-body">
+            <div class="cart__body-detail">
+              <img
+              src="./Assets/imagenes/cortes-carne-churrasco.jpg"
+              alt="Asado - Carniceria - San Juan"
+              />
+              <h3>Asado :</h3>
+              <p>$$$$</p>
+            </div>
+            
+
+              <div class="cart__body-control">                
+                <span class="body-control down">-</span>
+                <span class="body-control">1</span>
+                <span class="body-control up">+</span>  
+              </div>
+
+          </div>
+          <div class="cart-body">
+            <div class="cart__body-detail">
+              <img
+              src="./Assets/imagenes/cortes-carne-churrasco.jpg"
+              alt="Asado - Carniceria - San Juan"
+              />
+              <h3>Asado :</h3>
+              <p>$$$$</p>
+            </div>
+            
+
+              <div class="cart__body-control">                
+                <span class="body-control down">-</span>
+                <span class="body-control">1</span>
+                <span class="body-control up">+</span>  
+              </div>
+
+          </div>
+          
+
+          <div class="cart-footer">
+            <div class="cart-footer-detail">
+              <h3>Total</h3>
+              <span>$$$$$</span>
+            </div>
+
+               <button class="cart-footer-add">Comprar</button>
+            
+          </div>
+
+        </div>
+
+
+        <!--  overlay efecto glass ABRIR MENU HAMBURGUESA -->
+            <div class="overlay"></div>
+
       </nav>
     </header>
 

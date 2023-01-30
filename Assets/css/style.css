@@ -13,7 +13,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/* header */
+/*///////////////////////////////////////// header */
 header {
   display: flex;
   justify-content: space-between;
@@ -32,7 +32,100 @@ header img {
   height: 100%;
 }
 
-/* navbar */
+/*///////////////////////////////////////// Carrito */
+
+.cart-shopping {
+  position: absolute;
+  top: 65px;
+  right: 0;
+  padding: 30px 40px;
+  background: var(--bg-);
+  border-left: 1px solid var(--sky-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  gap: 20px;
+  height: calc(100vh - 65px);
+
+  overflow-y: scroll;
+  z-index: 2;
+  box-shadow: var(--sky-blue) 0 0 15px;
+  /* transform: translate(200%);
+  transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99); */
+}
+
+.cart-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+.cart-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cart-body {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 2px solid var(--yeelow);
+  border-radius: 5px;
+  padding: 20px 10px;
+  flex-wrap: wrap;
+}
+.cart__body-detail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.cart-body img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.cart__body-top {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cart__body-subtotal {
+  display: flex;
+  flex-direction: column;
+}
+.cart-footer-detail {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.cart-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/*OCULTAR BARRA DE SCROLL DEL CARRITO*/
+.cart-shopping::-webkit-scrollbar {
+  display: none;
+}
+
+.cart:checked + .cart-shopping {
+  transform: translate(0%);
+  transition: all 0.5s cubic-bezier(0.92, 01 0.35, 0.99);
+}
+.cart,
+.cart-shopping {
+  /* display: none; */
+}
+/*///////////////////////////////////////// navbar */
 
 .navbar {
   display: flex;
@@ -59,7 +152,7 @@ header img {
   color: var(--white);
 }
 
-/* main */
+/*///////////////////////////////////////// main */
 
 main {
   display: flex;
@@ -71,7 +164,7 @@ main {
   width: 100%;
 }
 
-/* hero */
+/*///////////////////////////////////////// hero */
 
 #hero {
   /* imagen de fondo */
@@ -130,7 +223,7 @@ main {
   font-size: 2rem;
 }
 
-/* about */
+/*///////////////////////////////////////// about */
 
 #about {
   display: flex;
@@ -165,7 +258,7 @@ main {
   padding: 50px;
 }
 
-/* cards */
+/*///////////////////////////////////////// cards */
 
 #cards {
   display: flex;

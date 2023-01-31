@@ -6,6 +6,8 @@
   --cid: #bae8e8;
   --gray: #f9f8fc;
   --sky-blue: #3bd9d9;
+  --red: rgb(145, 7, 7);
+  --bg-gray: rgba(81, 64, 64, 0.823);
 }
 
 * {
@@ -39,7 +41,7 @@ header img {
   top: 65px;
   right: 0;
   padding: 30px 40px;
-  background: var(--bg-);
+  background: var(--bg-black);
   border-left: 1px solid var(--sky-blue);
   display: flex;
   flex-direction: column;
@@ -51,10 +53,11 @@ header img {
   overflow-y: scroll;
   z-index: 2;
   box-shadow: var(--sky-blue) 0 0 15px;
-  /* transform: translate(200%);
-  transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99); */
+  transform: translate(200%);
+  transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
 }
 
+/* header carrito */
 .cart-header {
   display: flex;
   flex-direction: column;
@@ -63,20 +66,29 @@ header img {
   width: 100%;
   gap: 20px;
 }
+
+.cart-header h2 {
+  border-bottom: 2px solid var(--yeelow);
+}
 .cart-header-top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: 30px;
 }
-
+/* body carrito */
 .cart-body {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  border: 2px solid var(--yeelow);
+  height: 100%;
+  max-height: 200px;
+  border: 2px solid var(--sky-blue);
   border-radius: 5px;
-  padding: 20px 10px;
+  padding: 20px 10px 0 10px;
   flex-wrap: wrap;
 }
 .cart__body-detail {
@@ -84,6 +96,18 @@ header img {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  gap: 5px;
+}
+.cart-body-compra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.cart-body-eliminar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cart-body img {
   height: 50px;
@@ -94,36 +118,101 @@ header img {
 .cart__body-top {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 15px;
+  height: 100%;
 }
 .cart__body-subtotal {
   display: flex;
   flex-direction: column;
-}
-.cart-footer-detail {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+  gap: 10px;
 }
 
+.cart-body-eliminar {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2px;
+}
+.cart-body-eliminar button {
+  background-color: var(--red);
+  color: #fffffe;
+  font-weight: 800;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.cart-body-eliminar button:hover {
+  box-shadow: var(--red) 0 0 15px;
+}
+.cart__body-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.body-control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 5px;
+  color: var(--white);
+  font-weight: 800;
+  /* background-color: var(--white); */
+  border: 1px solid var(--yeelow);
+}
+
+.down:hover,
+.up:hover {
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: var(--yeelow) 0 0 15px;
+  background-color: var(--yeelow);
+  color: var(--bg-black);
+}
+
+/* footer carrito */
 .cart-footer {
   display: flex;
   flex-direction: column;
   width: 100%;
+  gap: 20px;
 }
-
+.cart-footer-detail {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.cart-footer-add {
+  background: var(--cid);
+  border: none;
+  padding: 10px 35px;
+  color: var(--bg-black);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 800;
+}
+.cart-footer-add:hover {
+  background-color: var(--sky-blue);
+  box-shadow: var(--sky-blue) 0 0 15px;
+}
 /*OCULTAR BARRA DE SCROLL DEL CARRITO*/
 .cart-shopping::-webkit-scrollbar {
   display: none;
 }
 
-.cart:checked + .cart-shopping {
+#cart-toggle:checked + .cart-shopping {
   transform: translate(0%);
   transition: all 0.5s cubic-bezier(0.92, 01 0.35, 0.99);
 }
-.cart,
+#cart-toggle,
 .cart-shopping {
-  /* display: none; */
+  display: none;
 }
 /*///////////////////////////////////////// navbar */
 
@@ -313,7 +402,13 @@ main {
   max-width: 1200px;
   width: 100%;
   padding: 20px 20px;
+  transition: all 0.3s linear;
 }
+.products img:hover {
+  transform: scale(1.1);
+  transition: all 0.3s linear;
+}
+
 .card__products {
   display: flex;
   flex-direction: column;

@@ -7,6 +7,7 @@
     <title>Carnes Ignacio</title>
     <!-- css -->
     <link rel="stylesheet" href="Assets/css/style.css" />
+    <link rel="stylesheet" href="Assets/css/mediaqueries.css">
 
     <!--  FONT AWESOME -->
     <link
@@ -35,16 +36,16 @@
           <li><a href="#contact">Contacto</a></li>
         </ul>
         <!-- carrito -->
-        <label for="cart">
+        <label for="cart-toggle" class="cart-label">
           <i class="fa-solid fa-cart-shopping cart-icon"></i>
         </label>
-        <input type="checkbox" id="cart">
+        <input type="checkbox" id="cart-toggle">
         <!-- menu del carrito -->
         <div class="cart-shopping">
 
           
           <div class="cart-header">
-            <h2>Carrito de compras</h2>
+            <h2>Carrito De Compras</h2>
             <div class="cart-header-top">
             <h3>Tus Productos</h3>
             <h3>Subtotal $</h3>
@@ -52,91 +53,104 @@
           </div>
 
           <div class="cart-body">
-            <div class="cart__body-detail">
-              <img
-              src="./Assets/imagenes/cortes-carne-churrasco.jpg"
-              alt="Asado - Carniceria - San Juan"
-              />
-              <h3>Asado :</h3>
-              <p>$1000</p>
-            </div>
-            <div class="cart__body-top">            
+            <div class="cart-body-compra">
+                <div class="cart__body-detail">
+                  <img
+                  src="./Assets/imagenes/cortes-carne-churrasco.jpg"
+                  alt="Asado - Carniceria - San Juan"
+                  />
+                  <h3>Asado :</h3>
+                  <p>$1000</p>
+                </div>
 
-              <div class="cart__body-control">                
-                <span class="body-control down">-</span>
-                <span class="body-control">1</span>
-                <span class="body-control up">+</span>  
+                <div class="cart__body-top">
+                    <div class="cart__body-control">                
+                      <span class="body-control down">-</span>
+                      <span class="body-control">1</span>
+                      <span class="body-control up">+</span>  
+                    </div>
+                    <div class="cart__body-subtotal">
+                      <span>SubTotal :</span>
+                      <span>$1000</span>
+                    </div>
+                  </div>
               </div>
 
-              <div class="cart__body-subtotal">
-                <span>SubTotal :</span>
-                <span>$1000</span>
+              <div class="cart-body-eliminar">
+                
+                <button>
+                  <i class="fa-solid fa-trash"></i> Eliminar del Carrito</button>
               </div>
-              </div>
-
           </div>
 
 
-          <div class="cart-body">
-            <div class="cart__body-detail">
-              <img
-              src="./Assets/imagenes/cortes-carne-churrasco.jpg"
-              alt="Asado - Carniceria - San Juan"
-              />
-              <h3>Asado :</h3>
-              <p>$$$$</p>
-            </div>
-            
+            <div class="cart-body">
+            <div class="cart-body-compra">
+                <div class="cart__body-detail">
+                  <img
+                  src="./Assets/imagenes/cortes-carne-churrasco.jpg"
+                  alt="Asado - Carniceria - San Juan"
+                  />
+                  <h3>Asado :</h3>
+                  <p>$1000</p>
+                </div>
 
-              <div class="cart__body-control">                
-                <span class="body-control down">-</span>
-                <span class="body-control">1</span>
-                <span class="body-control up">+</span>  
+                <div class="cart__body-top">
+                    <div class="cart__body-control">                
+                      <span class="body-control down">-</span>
+                      <span class="body-control">1</span>
+                      <span class="body-control up">+</span>  
+                    </div>
+                    <div class="cart__body-subtotal">
+                      <span>SubTotal :</span>
+                      <span>$1000</span>
+                    </div>
+                  </div>
               </div>
 
+              <div class="cart-body-eliminar">
+                
+                <button>
+                  <i class="fa-solid fa-trash"></i> Eliminar del Carrito</button>
+              </div>
           </div>
-          <div class="cart-body">
-            <div class="cart__body-detail">
-              <img
-              src="./Assets/imagenes/cortes-carne-churrasco.jpg"
-              alt="Asado - Carniceria - San Juan"
-              />
-              <h3>Asado :</h3>
-              <p>$$$$</p>
-            </div>
-            
+        
+           <div class="cart-body">
+            <div class="cart-body-compra">
+                <div class="cart__body-detail">
+                  <img
+                  src="./Assets/imagenes/cortes-cerdo.jpg"
+                  alt="Asado - Carniceria - San Juan"
+                  />
+                  <h3>Chuleta :</h3>
+                  <p>$500</p>
+                </div>
 
-              <div class="cart__body-control">                
-                <span class="body-control down">-</span>
-                <span class="body-control">1</span>
-                <span class="body-control up">+</span>  
+                <div class="cart__body-top">
+                    <div class="cart__body-control">                
+                      <span class="body-control down">-</span>
+                      <span class="body-control">3</span>
+                      <span class="body-control up">+</span>  
+                    </div>
+                    <div class="cart__body-subtotal">
+                      <span>SubTotal :</span>
+                      <span>$1500</span>
+                    </div>
+                  </div>
               </div>
 
-          </div>
-          <div class="cart-body">
-            <div class="cart__body-detail">
-              <img
-              src="./Assets/imagenes/cortes-carne-churrasco.jpg"
-              alt="Asado - Carniceria - San Juan"
-              />
-              <h3>Asado :</h3>
-              <p>$$$$</p>
-            </div>
-            
-
-              <div class="cart__body-control">                
-                <span class="body-control down">-</span>
-                <span class="body-control">1</span>
-                <span class="body-control up">+</span>  
+              <div class="cart-body-eliminar">
+                
+                <button>
+                  <i class="fa-solid fa-trash"></i> Eliminar del Carrito</button>
               </div>
-
           </div>
           
 
           <div class="cart-footer">
             <div class="cart-footer-detail">
               <h3>Total</h3>
-              <span>$$$$$</span>
+              <span>$3500</span>
             </div>
 
                <button class="cart-footer-add">Comprar</button>
@@ -149,7 +163,8 @@
         <!--  overlay efecto glass ABRIR MENU HAMBURGUESA -->
             <div class="overlay"></div>
 
-      </nav>
+          </nav>
+          <button>LOGIN</button>
     </header>
 
     <main>

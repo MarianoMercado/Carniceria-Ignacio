@@ -34,6 +34,65 @@ header img {
   height: 100%;
 }
 
+header img,
+a {
+  height: 100%;
+}
+
+/*///////////////////////////////////////// navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 60px;
+  color: var(--white);
+  /* margin-right: 100px; */
+}
+
+.navbarlist {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  gap: 20px;
+}
+
+.navbarlist a {
+  list-style-type: none;
+  text-decoration: none;
+  color: var(--white);
+}
+.navbar i {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* hover nabvar */
+.navbarlist li {
+  position: relative;
+  padding: 0;
+}
+
+.navbarlist li a::after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: var(--sky-blue);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.2s ease-in;
+}
+
+.navbarlist li a:hover::after {
+  transform-origin: bottom left;
+  transform: scaleX(1);
+}
 /*///////////////////////////////////////// Carrito */
 
 .cart-shopping {
@@ -51,7 +110,7 @@ header img {
   height: calc(100vh - 65px);
 
   overflow-y: scroll;
-  z-index: 2;
+
   box-shadow: var(--sky-blue) 0 0 15px;
   transform: translate(200%);
   transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
@@ -201,6 +260,11 @@ header img {
   background-color: var(--sky-blue);
   box-shadow: var(--sky-blue) 0 0 15px;
 }
+
+/* hover carrito */
+.navbar i:hover {
+  color: var(--sky-blue);
+}
 /*OCULTAR BARRA DE SCROLL DEL CARRITO*/
 .cart-shopping::-webkit-scrollbar {
   display: none;
@@ -210,35 +274,12 @@ header img {
   transform: translate(0%);
   transition: all 0.5s cubic-bezier(0.92, 01 0.35, 0.99);
 }
+
+/* OCULTAR CARRITO Y MENU HAMBURGUESA */
 #cart-toggle,
-.cart-shopping {
+#toggle-menu,
+.menu-label {
   display: none;
-}
-/*///////////////////////////////////////// navbar */
-
-.navbar {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 60px;
-  color: var(--white);
-  margin-right: 100px;
-}
-
-.navbarlist {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  font-size: 1.05rem;
-  font-weight: 600;
-  gap: 20px;
-}
-
-.navbarlist a {
-  list-style-type: none;
-  text-decoration: none;
-  color: var(--white);
 }
 
 /*///////////////////////////////////////// main */
@@ -258,16 +299,44 @@ main {
 #hero {
   /* imagen de fondo */
   background-image: url(../imagenes/Los-mejores-tipos-de-carnes-y-cortes-para-un-asado.jpg);
+
   height: 100vh;
   width: 100%;
   background-size: cover;
   background-position: center;
+  position: relative;
 }
+
+/* #hero::after {
+  content: "LLEVE CALIDAD A SU MESA";
+  font-size: 80px;
+  font-weight: 800;
+  background-color: #000000a6;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: start center;
+  margin-top: 65px;
+  color: var(--gray);
+} */
+/* #hero::before {
+  content: "CARNICERIA IGNACIO";
+  color: var(--gray);
+
+  font-size: 80px;
+  font-weight: 800;
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: start center;
+  place-items: end center;
+} */
 
 /* efecto de imagen */
 #hero::before {
   content: "";
   position: absolute;
+
   margin-top: 100px;
   width: 100%;
   height: 100vh;
@@ -286,15 +355,17 @@ main {
   font-weight: 800;
   font-family: "Radley", Georgia, "Times New Roman", serif;
   letter-spacing: 5px;
+  filter: no;
 }
 .hero-info h2 {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px auto;
+  width: 100%;
   /* background: rgba(5, 5, 2, 1); */
-  background: linear-gradient(rgba(253, 233, 233, 0), rgba(5, 5, 2, 8));
-
+  /* background: linear-gradient(rgba(253, 233, 233, 0), rgba(5, 5, 2, 4)); */
+  /* z-index: 1; */
   text-align: center;
   text-transform: uppercase;
   font-size: 4rem;
@@ -310,6 +381,7 @@ main {
   margin-bottom: 20px;
   font-style: italic;
   font-size: 2rem;
+  z-index: 0;
 }
 
 /*///////////////////////////////////////// about */
@@ -417,7 +489,7 @@ main {
   flex-wrap: wrap;
   gap: 20px;
   padding: 10px 20px;
-  width: 300px;
+  width: 250px;
   border-radius: 15px;
   background: var(--bg-);
   /* background: linear-gradient(to bottom, var(--gray), #121e3c); */
@@ -426,6 +498,8 @@ main {
 .card__products img {
   height: 200px;
   width: 200px;
+  border-radius: 15px;
+  padding: 5px;
 }
 .card__products-info {
   display: flex;
@@ -439,7 +513,7 @@ main {
 
 .card__products-btn {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   background: var(--gray);
   border: none;
@@ -447,7 +521,7 @@ main {
   border-radius: 10px;
   cursor: pointer;
   font-weight: 900;
-  width: 50%;
+  width: 80%;
   margin-bottom: 5px;
 }
 
@@ -467,7 +541,7 @@ main {
   box-shadow: var(--sky-blue) 0 0 15px;
 }
 
-/* contact */
+/*/////////////////////////////////////////  contact */
 
 #contact {
   display: flex;
@@ -550,4 +624,63 @@ footer img {
   display: flex;
   justify-content: space-between;
   width: 100%;
+}
+
+/*  login */
+
+.hero-login {
+  width: 90%;
+  max-width: 1500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-gray);
+}
+.hero-login-lefth,
+.login,
+.hero-login-rigth {
+  height: 500px;
+  width: 500px;
+  background: var(--white);
+}
+
+.hero-login-lefth {
+  background-image: url(../imagenes/vacas-campo-bg.webp);
+}
+.hero-login-rigth {
+  background-image: url(../imagenes/Vacas.jpg);
+}
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-black);
+  gap: 20px;
+  font-family: "Cinzel", serif;
+}
+.main-login {
+  height: 100vh;
+}
+.footer-login {
+  position: absolute;
+  bottom: 0;
+}
+.login form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.login-dni,
+.login-passw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
 }

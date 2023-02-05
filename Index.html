@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carnes Ignacio</title>
     <!-- css -->
-    <link rel="stylesheet" href="Assets/css/style.css" />
-    <link rel="stylesheet" href="Assets/css/mediaqueries.css">
+    <link rel="stylesheet" href="./Assets/css/style.css" />
+    <link rel="stylesheet" href="./Assets/css/mediaqueries.css"> 
+  
 
     <!--  FONT AWESOME -->
     <link
@@ -17,16 +18,22 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- font family -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
+      <a href="./Index.html">
       <img
         src="./Assets/imagenes/Logo-CarnesIgnacio-bg-black-removebg-preview.png"
         alt="Carnes Ignacio - carniceria"
       />
+      </a>
       <nav class="navbar">
            <!-- menu hamburgresa  -->
-            <label for="toggle-menu"> <i class="fas fa-bars"></i></label>
+            <label for="toggle-menu" class="menu-label"> <i class="fas fa-bars"></i> </label>
             <input type="checkbox" id="toggle-menu">
 <!-- navbarlist  -->
         <ul class="navbarlist">
@@ -34,16 +41,17 @@
           <li><a href="#about">Nosotros </a></li>
           <li><a href="#cards">Productos </a></li>
           <li><a href="#contact">Contacto</a></li>
+          <li><a href="./Contact.html">INICIA SESION</a></li>
         </ul>
+
         <!-- carrito -->
         <label for="cart-toggle" class="cart-label">
           <i class="fa-solid fa-cart-shopping cart-icon"></i>
         </label>
         <input type="checkbox" id="cart-toggle">
-        <!-- menu del carrito -->
-        <div class="cart-shopping">
 
-          
+        <!-- menu del carrito -->
+        <div class="cart-shopping">          
           <div class="cart-header">
             <h2>Carrito De Compras</h2>
             <div class="cart-header-top">
@@ -158,19 +166,18 @@
           </div>
 
         </div>
-
-
         <!--  overlay efecto glass ABRIR MENU HAMBURGUESA -->
             <div class="overlay"></div>
 
           </nav>
-          <button>LOGIN</button>
+          <!-- <button>LOGIN</button> -->
     </header>
 
     <main>
       <!-- hero -->
 
-      <section id="hero">
+      <section id="hero" class="slide-rotate-ver-r-fwd">
+        
         <div class="hero-info">
           <h1>CARNICERIA IGNACIO</h1>
           <h2>LLEVE CALIDAD A SU MESA</h2>
@@ -357,6 +364,8 @@
       <section id="contact">
         <div class="contact-info">
           <h2>Contactanos</h2>
+          <a href="./Login.html">Registrate Para recibir nuestras ofertas!</a>
+          
           <div class="contact-wsp">
             <i class="fa-brands fa-whatsapp"></i>
             <p>2646629503</p>

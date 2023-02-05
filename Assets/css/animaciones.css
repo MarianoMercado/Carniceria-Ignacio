@@ -1,0 +1,24 @@
+/* animacion a hero */
+
+#hero:hover + .slide-rotate-ver-r-fwd {
+}
+
+about-img:hover {
+  animation: slide-rotate-ver-r-fwd 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    both;
+}
+
+.slide-rotate-ver-r-fwd {
+  animation: slide-rotate-ver-r-fwd 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    both;
+}
+@keyframes slide-rotate-ver-r-fwd {
+  0% {
+    transform: translateX(0) translateZ(0) rotateY(0);
+    transform-origin: center left;
+  }
+  100% {
+    transform: translateX(150px) translateZ(130px) rotateY(-90deg);
+    transform-origin: center left;
+  }
+}

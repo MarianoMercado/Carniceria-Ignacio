@@ -176,7 +176,7 @@
     <main>
       <!-- hero -->
 
-      <section id="hero" class="slide-rotate-ver-r-fwd">
+      <section id="hero" >
         
         <div class="hero-info">
           <h1>CARNICERIA IGNACIO</h1>
@@ -361,70 +361,101 @@
       </section>
 
       <!-- contact -->
-      <section id="contact">
-        <div class="contact-info">
-          <h2>Contactanos</h2>
-          <a href="./Login.html">Registrate Para recibir nuestras ofertas!</a>
+
+
+
+      <section id="contact">        
+        <!-- contac form -->
+        <div class="contact-form"> 
+          <h3>Registrate Para recibir nuestras ofertas!</h3>
           
-          <div class="contact-wsp">
-            <i class="fa-brands fa-whatsapp"></i>
-            <p>2646629503</p>
-          </div>
-
-          <div class="contact-adress">
-            <i class="fa-solid fa-location-dot"></i>
-            <p> Sto. Cabral Oeste. </p>
-          </div>
-
-           <div class="contact-location">
-            <i class="fa-solid fa-map"></i>
-            <p>Rivadavia - SAN JUAN</p>
+          <div class="contact-form--info">
+            <div class="input-container">
+              <label class="label" for="nombre">Nombre</label>
+                <input type="text" id="nombre" placeholder="Ingrese su Nombre" />
             </div>
-
-          <div class="contact-horus">
-            <i class="fa-solid fa-file-pen"></i>
-            <p> Atención al Público :</p>
-          </div>
-
-          <div class="horus-day">
-            <div class="horus-day-week">
-              <p><i class="fa-solid fa-calendar-days"></i>  Lunes a Sabados :</p>
-                <p><i class="fa-solid fa-clock"></i>  09:00 a 14:00 hs </p>           </p>
-              <p><i class="fa-solid fa-clock"></i>  19:00 a 22:30 hs;</p>
+            <div class="input-container">
+              <label class="label" for="apellido">Apellido</label>
+                <input type="text" id="apellido" placeholder="Ingrese su Apellido" />
             </div>
-            <div class="horus-day-weekend">
-              <p><i class="fa-solid fa-calendar-days"></i>  Domingos :</p>             </p>
-              <p><i class="fa-solid fa-clock"></i>  09:00 a 14:00 hs.</p>
+            <div class="input-container">
+              <label class="label" for="dni">Dni</label>
+              <input type="text" id="dni" placeholder="Ingrese su Dni" />
+            </div>
+            <div class="input-container">
+              <label class="label" for="email">Email</label>
+              <input type="text" id="email" placeholder="Ingrese su Email" />
             </div>
           </div>
+          
+          <button>Registrarse</button>
         </div>
-        <!-- gps -->
-        <div class="contact-gps">
-          
-          <iframe
+        
+        <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d226.85326106873757!2d-68.58445790014447!3d-31.516249977778884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96814112a842cf41%3A0xfa76c888e72382c0!2sIgnacio%20Carniceria!5e0!3m2!1ses!2sar!4v1674867152328!5m2!1ses!2sar"
-            width="600"
-            height="450"
-            style="border: 0"
+         class="contact--iframe"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
-        </div>
       </section>
-
-      
-
-    
     </main>
+
     <!-- footer -->
     <footer >
+       
+        <div class="footer-horus">
+                 <div class="horus-day">
+                   <!-- <div class="contact-horus">
+                      <i class="fa-solid fa-file-pen"></i>
+                      <p> Atención al Público :</p>
+                    </div> -->
+
+                    <div class="horus-day-week">
+                      <p><i class="fa-solid fa-calendar-days"></i>  Lunes a Sabados :</p>
+                        <p><i class="fa-solid fa-clock"></i>  09:00 a 14:00 hs </p>           </p>
+                      <p><i class="fa-solid fa-clock"></i>  19:00 a 22:30 hs;</p>
+                    </div>
+                    <div class="horus-day-weekend">
+                      <p><i class="fa-solid fa-calendar-days"></i>  Domingos :</p>             </p>
+                      <p><i class="fa-solid fa-clock"></i>  09:00 a 14:00 hs.</p>
+                    </div>
+              </div>
+
+              <div class="footer-contact">
+                    <!-- <h3>Contactanos</h3> -->
+                    <!-- <a href="./Login.html">Registrate Para recibir nuestras ofertas!</a> -->
+                    
+                    <div class="contact-form--info">
+                    <div class="contact-wsp">
+                      <i class="fa-brands fa-whatsapp"></i>
+                      <p>2646629503</p>
+                    </div>
+
+                    <div class="contact-adress">
+                      <i class="fa-solid fa-location-dot"></i>
+                      <p> Sto. Cabral Oeste. </p>
+                    </div>
+
+                    <div class="contact-location">
+                      <i class="fa-solid fa-map"></i>
+                      <p>Rivadavia - SAN JUAN</p>
+                      </div>                      
+                  </div>        
+              </div>
+         
+        </div>
+
+
+<div class="footer-top">
       <span> Copyright © 2023 </span>
   <img
           src="./Assets/imagenes/Logo-CarnesIgnacio-bg-black-removebg-preview.png"
           alt="Carnes Ignacio - carniceria"
         />
         <span> Pagina creada por Mariano Mercado </span>
+
+        </div>
        
     </footer>
   </body>

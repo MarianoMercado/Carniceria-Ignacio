@@ -58,20 +58,30 @@ a {
   font-size: 1.05rem;
   font-weight: 600;
   gap: 20px;
+  z-index: 2;
 }
 
 .navbarlist a {
   list-style-type: none;
   text-decoration: none;
   color: var(--white);
+  padding: 10px;
 }
 .navbar i {
   font-size: 20px;
   font-weight: 800;
 }
-
+.navbarlist a:hover {
+  border-color: 1px solid var(--sky-blue);
+  background-color: var(--white);
+  border-radius: 5px;
+  color: var(--bg-black);
+  padding: 10px;
+  font-weight: 800;
+  /* box-shadow: var(--gray) 0 0 5px; */
+}
 /* hover nabvar */
-.navbarlist li {
+/* .navbarlist li {
   position: relative;
   padding: 0;
 }
@@ -92,7 +102,7 @@ a {
 .navbarlist li a:hover::after {
   transform-origin: bottom left;
   transform: scaleX(1);
-}
+} */
 /*///////////////////////////////////////// Carrito */
 
 .cart-shopping {
@@ -114,6 +124,9 @@ a {
   box-shadow: var(--sky-blue) 0 0 15px;
   transform: translate(200%);
   transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99);
+  -webkit-animation: scale-up-hor-right 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+    both;
+  animation: scale-up-hor-right 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 /* header carrito */
@@ -271,6 +284,7 @@ a {
 }
 
 #cart-toggle:checked + .cart-shopping {
+  display: flex;
   transform: translate(0%);
   transition: all 0.5s cubic-bezier(0.92, 01 0.35, 0.99);
 }
@@ -278,7 +292,8 @@ a {
 /* OCULTAR CARRITO Y MENU HAMBURGUESA */
 #cart-toggle,
 #toggle-menu,
-.menu-label {
+.menu-label,
+.cart-shopping {
   display: none;
 }
 
@@ -550,87 +565,80 @@ main {
 #contact {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   text-align: center;
   padding: 20px 20px;
   max-width: 90%;
   width: 100%;
   font-size: 25px;
-  gap: 20px;
+  gap: 50px;
   margin: 50px 0;
 }
+.contact-card-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.contact-card {
+  height: 100px;
+  width: 500px;
+  padding: 5px 10px;
+  border: 5px inset gray;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  box-shadow: var(--bg-gray) 0px 5px 15px;
+  transition: all 0.3s ease-out;
+}
+.contact-card:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease-out;
+}
 
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  width: 50%;
-}
-.contact-form--info {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  gap: 10px;
-}
-.contact-form button {
+.contact-card i {
+  font-size: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--gray);
-  border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 900;
-  margin-bottom: 5px;
 }
-.contact-form button:hover {
-  background: var(--sky-blue);
-  box-shadow: var(--sky-blue) 0 0 15px;
-}
-.input-container {
+.contac-card-link {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  width: 50%;
-  gap: 10px;
+  flex-direction: column;
+  font-weight: 800;
 }
-.input-container input {
-  padding: 5px;
-
-  border: 2px solid var(--sky-blue);
-  background: rgb(0, 0, 0, 0);
-  outline: none;
-  border-radius: 5px;
-  font-size: 14px;
-  transition: 0.3s;
-  color: var(--gray);
+.contac-card-link a {
+  text-decoration: none;
+  list-style: none;
+  color: #a29e9e;
+  font-size: 16px;
+  transition: all ease-out;
 }
-
-.input-container input::placeholder {
-  font-size: 14px;
-  opacity: 0;
-  transition: 0.3s;
-  color: var(--gray);
+.contac-card-link a:hover {
+  transform: scale(1.02);
+  transition: all 0.3s ease-out;
+  color: rgb(223, 7, 7);
+  border-bottom: 1px dashed red;
 }
-.input-container input:focus::placeholder {
-  opacity: 1;
-}
-
 .contact--iframe {
   height: 350px;
   width: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .contact--iframe:hover {
   box-shadow: var(--gray) 0 0 5px;
 }
 /*///////////////////////////////////////// footer */
 
-footer {
+.footer {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -655,10 +663,10 @@ footer {
 
   gap: 20px;
 }
-.contact-wsp,
-.contact-adress,
+.footer-wsp,
+.footer-adress,
 .contact-horus,
-.contact-location {
+.footer-location {
   display: flex;
   text-align: center;
   width: 100%;
@@ -697,48 +705,113 @@ footer img {
   gap: 50px;
 }
 
-/*********************************  login ***************************/
+.footer-form--info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
 
+/*********************************  login ***************************/
+.main-login {
+  background-image: url(../imagenes/vacas-campo-bg.webp);
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
 .hero-login {
-  width: 90%;
+  width: 400px;
+  height: 400px;
   max-width: 1500px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: var(--bg-gray);
-}
-.hero-login-lefth,
-.login,
-.hero-login-rigth {
-  height: 500px;
-  width: 500px;
-  background: var(--white);
-}
-
-.hero-login-lefth {
-  background-image: url(../imagenes/vacas-campo-bg.webp);
-}
-.hero-login-rigth {
-  background-image: url(../imagenes/Vacas.jpg);
+  background: var(--bg-black);
+  padding: 10px 30px;
+  border-radius: 10px;
+  box-shadow: 0 25px 25px var(--bg-black);
+  -webkit-animation: scale-up-ver-center 0.4s
+    cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: scale-up-ver-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
 .login {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  font-family: "Cinzel", serif;
+  gap: 30px;
+  height: 100%;
+}
+.login-header {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--bg-black);
+  text-align: center;
   gap: 20px;
-  font-family: "Cinzel", serif;
 }
-.main-login {
-  height: 100vh;
+.login-header h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.login-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.login-footer a {
+  list-style: none;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 16px;
+  padding: 5px;
+  font-weight: 900;
+}
+.login-footer a:hover {
+  border-color: 1px solid var(--sky-blue);
+  background-color: var(--white);
+  border-radius: 5px;
+  color: var(--bg-black);
+  box-shadow: var(--gray) 0 0 5px;
+}
+.header-redirect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+.header-redirect a {
+  width: 50%;
+  border-left: 2px solid var(--gray);
+  border-top: 2px solid var(--gray);
+  border-right: 2px solid var(--gray);
+  padding: 5px;
+}
+.header-redirect a:hover {
+  background-color: var(--gray);
 }
 .footer-login {
-  position: absolute;
-  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  text-align: center;
+  padding: 20px 40px;
+  width: 100%;
+  gap: 30px;
+  box-shadow: var(--gray) 0 0 5px;
+  color: var(--gray);
 }
-.login form {
+.login-body form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -752,6 +825,104 @@ footer img {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-size: cover;
-  background-position: center;
+  gap: 10px;
+}
+
+.login-dni input,
+.login-passw input {
+  padding: 5px;
+  border: 2px solid var(--sky-blue);
+  background: rgb(0, 0, 0, 0);
+  outline: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.3s;
+  color: var(--gray);
+}
+
+/*********************************  contact ***************************/
+
+.Contac-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Cinzel", serif;
+  gap: 30px;
+  height: 100%;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+.contact-form--info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+.contact-form button,
+.contact-form a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--gray);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 16px;
+  margin-bottom: 5px;
+  list-style: none;
+  text-decoration: none;
+  color: var(--bg-black);
+}
+.contact-form button:hover,
+.contact-form a:hover {
+  background: var(--sky-blue);
+  box-shadow: var(--sky-blue) 0 0 15px;
+}
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+}
+.input-container input {
+  padding: 5px;
+  border: 2px solid var(--sky-blue);
+  background: rgb(0, 0, 0, 0);
+  outline: none;
+  border-radius: 5px;
+  font-size: 15px;
+  transition: 0.3s;
+  color: var(--gray);
+}
+.input-container label {
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.input-container input::placeholder {
+  font-size: 12px;
+  transition: 0.3s;
+  color: var(--gray);
+  text-align: center;
+}
+.input-container input:focus::placeholder {
+  opacity: 1;
+}
+form {
+  display: flex;
+  display: flex;
+
+  align-items: center;
 }

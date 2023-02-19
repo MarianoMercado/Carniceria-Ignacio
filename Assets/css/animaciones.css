@@ -1,24 +1,74 @@
-/* animacion a hero */
-
-#hero:hover + .slide-rotate-ver-r-fwd {
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 65px;
+}
+/* efecto glass */
+.overlay {
+  position: absolute;
+  top: 65px;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+  /* efecto Glassmorphismo */
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: none;
+}
+#toggle-menu:checked ~ .overlay {
+  display: flex;
 }
 
-about-img:hover {
-  animation: slide-rotate-ver-r-fwd 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-    both;
-}
-
-.slide-rotate-ver-r-fwd {
-  animation: slide-rotate-ver-r-fwd 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-    both;
-}
-@keyframes slide-rotate-ver-r-fwd {
+/* animacion a carrito */
+@-webkit-keyframes scale-up-hor-right {
   0% {
-    transform: translateX(0) translateZ(0) rotateY(0);
-    transform-origin: center left;
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
   }
   100% {
-    transform: translateX(150px) translateZ(130px) rotateY(-90deg);
-    transform-origin: center left;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+}
+@keyframes scale-up-hor-right {
+  0% {
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+}
+/* animacion a login y contact */
+
+@-webkit-keyframes scale-up-ver-center {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+@keyframes scale-up-ver-center {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
   }
 }

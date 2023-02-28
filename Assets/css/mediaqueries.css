@@ -37,7 +37,7 @@
   }
   .navbarlist li {
     border: 1px solid var(--sky-blue);
-    width: 100%;
+    width: 50%;
     padding: 20px;
   }
   .navbarlist li:hover {
@@ -197,6 +197,7 @@
 
     gap: 10px;
   }
+
   /* .contact-form--info {
     flex-direction: row;
     width: 100%;
@@ -211,7 +212,9 @@
     color: rgb(255, 254, 254);
     font-weight: 900;
   }
-
+  .hero-info h1 {
+    margin-bottom: 99px;
+  }
   #cards h2 {
     font-weight: 800;
     font-size: 25px;
@@ -241,12 +244,30 @@
   .input-container {
     width: 90%;
   }
+  .hero-login {
+    width: 300px;
+  }
 }
 @media (max-width: 438px) {
   .hero-info h2 {
     font-size: 2rem;
   }
+  .about-info {
+    max-width: 100%;
+  }
   #cards h2 {
-    font-size: 15px;
+    font-size: 21px;
+    padding: 10px 20px;
+  }
+  .contact-card {
+    height: 100px;
+    width: 300px;
+  }
+
+  .contact-card i {
+    font-size: 30px;
+  }
+  .contac-card-link span {
+    font-size: 16px;
   }
 }

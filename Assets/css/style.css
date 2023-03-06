@@ -28,7 +28,7 @@ header {
   position: fixed;
   top: 0;
   z-index: 1;
-  box-shadow: var(--gray) 0 0 15px;
+  box-shadow: var(--gray) 0 0 5px;
 }
 header img {
   height: 100%;
@@ -305,6 +305,8 @@ main {
   background: var(--bg-black);
   color: var(--white);
   width: 100%;
+  background-color: #040305;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%233edaf6' fill-opacity='0.11'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
 }
 
 /*///////////////////////////////////////// hero */
@@ -427,15 +429,54 @@ main {
   text-shadow: 1px, 2px, #a29e9e;
   justify-content: end;
 }
+.about-img-conteiner {
+  position: relative;
+  width: 50%;
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
 .about-img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 100%;
+  height: 100%;
   height: auto;
-  padding: 50px;
+  transition: all 1s ease-out;
+}
+.capa {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s ease-out;
+}
+.capa h2 {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 900;
+  font-size: 30px;
+  /* font-size: 20px; */
 }
 
+.capa img {
+  /* border: 5px inset gray;
+  border-radius: 50%;
+  padding: 10px; */
+}
+
+.about-img-conteiner:hover > .capa {
+  opacity: 1;
+  visibility: visible;
+}
 /*///////////////////////////////////////// cards */
 
 #cards {
@@ -903,6 +944,7 @@ footer img {
   font-size: 15px;
   transition: 0.3s;
   color: var(--gray);
+  width: 50%;
 }
 .input-container label {
   font-size: 20px;

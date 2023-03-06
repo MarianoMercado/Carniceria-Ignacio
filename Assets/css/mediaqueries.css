@@ -247,6 +247,10 @@
   .hero-login {
     width: 300px;
   }
+  .input-container {
+    width: 90%;
+    gap: 5px;
+  }
 }
 @media (max-width: 438px) {
   .hero-info h2 {
